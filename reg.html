@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="regcss.css">
+    <title>Guide Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Guide Registration</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="guideType">Select Guide (Product or Travel):</label>
+            <select id="guideType" name="guideType" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="product">Product</option>
+                <option value="travel">Travel</option>
+            </select>
+            <label for="existingAccount">Already have an account?</label>
+            <input type="checkbox" id="existingAccount" name="existingAccount" onclick="showLoginLink()">
+
+            <p id="loginLink" style="display: none;">Already have an account? <a href="password.html">Login</a></p>
+            <p>Social Login Options:</p>
+            <div class="social-login">
+                <!-- Add your social login icons and links here -->
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter</a>
+                <a href="#" class="social-icon">Google</a>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        function showLoginLink() {
+            var loginLink = document.getElementById('loginLink');
+            var checkbox = document.getElementById('existingAccount');
+
+            if (checkbox.checked) {
+                loginLink.style.display = 'block';
+            } else {
+                loginLink.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
